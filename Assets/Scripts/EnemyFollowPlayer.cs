@@ -5,7 +5,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class FollowPlayer : MonoBehaviour
+public class EnemyFollowPlayer : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] float chaseRange = 5; 
@@ -52,7 +52,7 @@ public class FollowPlayer : MonoBehaviour
 
     private void AttackTarget()
     {
-        Debug.Log("Attacking Target ");
+        Debug.Log("Being Attacked by Zombie!");
     }
 
     void ChaseTarget()
