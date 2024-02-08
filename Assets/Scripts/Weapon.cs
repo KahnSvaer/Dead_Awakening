@@ -59,8 +59,8 @@ public class Weapon : MonoBehaviour
         RaycastHit hitObject;
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hitObject))
         {
-            GameObject target = hitObject.transform.gameObject;
-            if (target.GetComponent<EnemyHealth>() == null) 
+            Transform target = hitObject.transform;
+            if (target.parent.GetComponent<EnemyHealth>() == null) 
             {
                 ParticleSystem particle = Instantiate(hitEffectVFX[0],hitObject.point,Quaternion.LookRotation(hitObject.normal),VFXContainer);
                 Destroy(particle.gameObject,3f);
@@ -73,10 +73,10 @@ public class Weapon : MonoBehaviour
 
     private void ShootEnemy(RaycastHit hitObject)
     {
-        GameObject target = hitObject.transform.gameObject;
+        Transform target = hitObject.transform;
         ParticleSystem particle = Instantiate(hitEffectVFX[1],hitObject.point,Quaternion.LookRotation(hitObject.normal),VFXContainerZombie);
         Destroy(particle.gameObject,3f);
-        EnemyHealth enemyHealth = target.GetComponent<EnemyHealth>();
+        EnemyHealth enemyHealth = target.GetComponentInParent<EnemyHealth>();
         enemyHealth.DecreaseHealth(bulletDamage);
     }
 }

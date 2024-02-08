@@ -11,12 +11,14 @@ public class EnemyFollowPlayer : MonoBehaviour
     [SerializeField] float chaseRange = 5; 
     
     NavMeshAgent navMeshAgent;
+    Animator animator;
     float distanceToTarget = Mathf.Infinity;
 
     bool isProvoked;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
         distanceToTarget = Vector3.Distance(transform.position,target.position);
     }
 
@@ -43,7 +45,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     private void EngageTarget()
     {
         if(distanceToTarget >= navMeshAgent.stoppingDistance){
-        ChaseTarget();
+            ChaseTarget();
         }
         if(distanceToTarget <= navMeshAgent.stoppingDistance){
             AttackTarget();
@@ -52,11 +54,13 @@ public class EnemyFollowPlayer : MonoBehaviour
 
     private void AttackTarget()
     {
-        Debug.Log("Being Attacked by Zombie!");
+        animator.SetBool("Attack",true);
     }
 
     void ChaseTarget()
     {
+        animator.SetBool("Attack",false);
+        animator.SetTrigger("Move");
         navMeshAgent.SetDestination(target.position);
     }
 
