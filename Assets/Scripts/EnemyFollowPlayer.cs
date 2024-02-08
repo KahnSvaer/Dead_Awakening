@@ -7,9 +7,9 @@ using UnityEngine.AI;
 
 public class EnemyFollowPlayer : MonoBehaviour
 {
-    [SerializeField] Transform target;
     [SerializeField] float chaseRange = 5; 
     
+    Transform target;
     NavMeshAgent navMeshAgent;
     Animator animator;
     float distanceToTarget = Mathf.Infinity;
@@ -17,6 +17,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     bool isProvoked;
     void Start()
     {
+        target = FindObjectOfType<PlayerHealth>().transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         distanceToTarget = Vector3.Distance(transform.position,target.position);

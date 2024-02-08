@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventSetter : MonoBehaviour
+public class EnemyEventSetter : MonoBehaviour
 {
     EnemyAttack enemyAttack;
 

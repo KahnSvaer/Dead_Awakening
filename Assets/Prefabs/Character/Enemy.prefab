@@ -71,7 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3d36dfbc142884a88dcd70cd67fdba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   chaseRange: 10
 --- !u!114 &1772492676908451520
 MonoBehaviour:
@@ -98,8 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e98f6514978bd54fbb47399094fb59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  damage: 40
+  damage: 20
 --- !u!1 &2624083711286050359
 GameObject:
   m_ObjectHideFlags: 0
