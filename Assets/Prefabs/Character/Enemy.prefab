@@ -72,6 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseRange: 10
+  turnSpeed: 6
+  enableGizmos: 0
 --- !u!114 &1772492676908451520
 MonoBehaviour:
   m_ObjectHideFlags: 0

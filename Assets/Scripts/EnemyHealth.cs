@@ -17,6 +17,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void DecreaseHealth(int damage)
     {
+        BroadcastMessage("Agroed",SendMessageOptions.RequireReceiver);
         health -= damage;
         CheckDeath();
     }

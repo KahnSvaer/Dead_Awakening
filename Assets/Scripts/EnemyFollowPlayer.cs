@@ -9,6 +9,8 @@ public class EnemyFollowPlayer : MonoBehaviour
     [SerializeField] float chaseRange = 5; 
     [SerializeField] float turnSpeed;
 
+    [Tooltip("Editor only")][SerializeField] bool enableGizmos = false;
+
     
     Transform target;
     NavMeshAgent navMeshAgent;
@@ -38,10 +40,20 @@ public class EnemyFollowPlayer : MonoBehaviour
         {
             EngageTarget();
         }
-        else if (distanceToTarget <= chaseRange)
+        CheckAwareness();
+    }
+
+    private void CheckAwareness()
+    {
+        if (distanceToTarget <= chaseRange)
         {
             isProvoked = true;
         }
+    }
+
+    public void Agroed()
+    {
+        isProvoked = true;
     }
 
 
@@ -77,7 +89,10 @@ public class EnemyFollowPlayer : MonoBehaviour
 
 
     private void OnDrawGizmosSelected() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,chaseRange);
+        if (enableGizmos)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position,chaseRange);
+        }
     }
 }

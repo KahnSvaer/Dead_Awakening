@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 1020889981613750778}
   - component: {fileID: 1757116983942054064}
   - component: {fileID: 3697873853205413191}
+  - component: {fileID: 2554879827397965928}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -377,6 +378,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!114 &2554879827397965928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271280226196770928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85224aedf8d49bc439bddb70d40dde74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8978575416749527650
 GameObject:
   m_ObjectHideFlags: 0

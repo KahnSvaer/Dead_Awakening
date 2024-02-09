@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void DeathSequence()
     {
-        Debug.Log("Git Good NOOB!!!");
+        PlayerDeathHandler playerDeathHandler = GetComponent<PlayerDeathHandler>();
+        playerDeathHandler.HandleDeath();
     }
 }
